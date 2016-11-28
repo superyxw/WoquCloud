@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#000000"
     tools:context=".views.MainActivity">
 
     <include
@@ -12,4 +13,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!" />
+
+    <include
+        layout="@layout/nav_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"/>
+
+    <ImageView
+        android:id="@+id/iv_scan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/scan"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"/>
 </RelativeLayout>

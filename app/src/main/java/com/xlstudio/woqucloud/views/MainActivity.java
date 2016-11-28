@@ -2,18 +2,22 @@ package com.xlstudio.woqucloud.views;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.LinearLayout;
 
 import com.xlstudio.woqucloud.R;
 import com.xlstudio.woqucloud.core.BaseFragment;
 import com.xlstudio.woqucloud.core.BaseFragmentActivity;
+import com.xlstudio.woqucloud.utils.ToastUtils;
+
+import butterknife.Bind;
 
 public class MainActivity extends BaseFragmentActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-    }
+
+    @Bind(R.id.ll_nav)
+    LinearLayout navLl;
+
 
     @Override
     protected int getLayoutId() {
@@ -25,8 +29,26 @@ public class MainActivity extends BaseFragmentActivity {
 
     }
 
+    private class NavClickListener implements View.OnClickListener{
+
+        @Override
+        public void onClick(View v) {
+            for(int i=0;i<navLl.getChildCount();i++){
+               if(v==navLl.getChildAt(i)){
+                   navLl.getChildAt(i).setSelected(true);
+               }else{
+                   navLl.getChildAt(i).setSelected(false);
+               }
+            }
+        }
+    }
+
     @Override
     protected void initListeners() {
+        for(int i=0;i<navLl.getChildCount();i++){
+            navLl.getChildAt(i).setOnClickListener(new NavClickListener());
+        }
+
 
     }
 
