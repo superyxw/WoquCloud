@@ -3,6 +3,7 @@ package com.xlstudio.woqucloud.views.fragment;
 import android.os.Bundle;
 import android.view.View;
 
+import com.xlstudio.woqucloud.R;
 import com.xlstudio.woqucloud.core.BaseFragment;
 
 /**
@@ -11,7 +12,7 @@ import com.xlstudio.woqucloud.core.BaseFragment;
 public class ListFragment extends BaseFragment{
     @Override
     protected int getLayoutId() {
-        return 0;
+        return R.layout.list_fragment;
     }
 
     @Override
